@@ -1,19 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  let arr = [10, 25, 30, 45, 50]
-  let num=[1,2,3,4,5,6,7,8,9,10]
-  
+  // const userInput = prompt("Please enter a number:");
+  const [age, setAge] = useState();
+  function handleAgeChange(event) {
+    setAge(event.target.value)
+  }
   return (
-  
-  <div>{arr.map((singleElement)=>{
-     return <div> {num.map((singleTable)=>{
-      return<span>{singleElement*singleTable +"  "}</span>  
-      })}</div>
-    })}
-  </div>
-      );
+
+    <div>
+      <input name="age" value={age} onChange={handleAgeChange}/>
+        <div>{age}</div>
+    </div>
+
+
+
+  );
 }
 
 export default App;
